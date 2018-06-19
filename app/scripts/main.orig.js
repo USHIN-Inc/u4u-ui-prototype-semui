@@ -65,9 +65,9 @@ $(document).ready(function(){
 	var $rimArray = [];
 
 	// make 3 example rims 
-	$rimArray.push(Rim("me", "#FFDD89", "c"));
-	$rimArray.push(Rim("bibbelo", "#CA6DAC", "c"));
-	$rimArray.push(Rim("everyone", "#63B795", "b"));
+	$rimArray.push(Rim('me', '#FFDD89', 'c'));
+	$rimArray.push(Rim('bibbelo', '#CA6DAC', 'c'));
+	$rimArray.push(Rim('everyone', '#63B795', 'b'));
 
 
 	// make the rims initial rims
@@ -93,26 +93,26 @@ $(document).ready(function(){
 			// region numbers are 0-8
 			// 0 = nw, 1 = n, 2 = ne, 3 = w, 4 = c, 5 = e, 6 = sw, 7 = s, 8 = se
 			// E.G.:	region25 = east region on the 2nd outermost rim 
-			$rimArray[i].region[j] = document.createElement("div");
-			$rimArray[i].region[j].id = "region" + i.toString() + j.toString();
-			$rimArray[i].region[j].className = "region";
-			document.getElementById("box").appendChild($rimArray[i].region[j]);
+			$rimArray[i].region[j] = document.createElement('div');
+			$rimArray[i].region[j].id = 'region' + i.toString() + j.toString();
+			$rimArray[i].region[j].className = 'region';
+			document.getElementById('box').appendChild($rimArray[i].region[j]);
 			$rimArray[i].w[j] = 0;
 			$rimArray[i].h[j] = 0;
 			$rimArray[i].x[j] = 0;
 			$rimArray[i].y[j] = 0;
 			// if this region is to be checkered, make it darker and toggle it
 			if ($checkeredRegion == true){
-				document.getElementById("region" + i.toString() + j.toString()).style.filter = "brightness(90%)";
+				document.getElementById('region' + i.toString() + j.toString()).style.filter = 'brightness(90%)';
 				$checkeredRegion = false;
 			// otherwise just toggle it
 			} else {
 				$checkeredRegion = true;
 			}
 			// event listeners
-			//document.getElementById("region" + i.toString() + j.toString()).addEventListener("mouseover", moveTextArea(i,j));
+			//document.getElementById('region' + i.toString() + j.toString()).addEventListener('mouseover', moveTextArea(i,j));
 		}
-		document.getElementById("region" + i.toString() + "4").style.textAlign = "center";
+		document.getElementById('region' + i.toString() + '4').style.textAlign = 'center';
 	}
 
 	
@@ -131,8 +131,8 @@ $(document).ready(function(){
 
 		$rimArray[0].hOffset = $horizontalMargin;
 		$rimArray[0].vOffset = $verticalMargin;	
-		$("#box").css("width", $rimArray[0].width);
-		$("#box").css("height", $rimArray[0].height);
+		$('#box').css('width', $rimArray[0].width);
+		$('#box').css('height', $rimArray[0].height);
 		$sizeCount = $boxHeight;
 
 		/*
@@ -155,11 +155,11 @@ $(document).ready(function(){
 				$rimArray[i].vOffset = $rimArray[i-1].y[1] + $rimArray[i-1].h[1];	
 			}
 
-			// the "balanced" mode width and height for this region
+			// the 'balanced' mode width and height for this region
 			var $balancedRegionWidth = $rimArray[i].width / 3;
 			var $balancedRegionHeight = $rimArray[i].height / 3;
 			// if the rim is set to balanced mode
-			if ($rimArray[i].mode == "b"){
+			if ($rimArray[i].mode == 'b'){
 				// for each of the 9 regions
 				for(var j = 0; j < 9; j++){
 					//set the regions dimensions to the proportionally weighted width and height
@@ -210,32 +210,32 @@ $(document).ready(function(){
 							break;
 					}
 					// apply the CSS change
-					$("#region" + i.toString() + j.toString()).css("width", $rimArray[i].w[j]);
-					$("#region" + i.toString() + j.toString()).css("height", $rimArray[i].h[j]);
-					$("#region" + i.toString() + j.toString()).css("left", $rimArray[i].x[j]);
-					$("#region" + i.toString() + j.toString()).css("top", $rimArray[i].y[j]);
+					$('#region' + i.toString() + j.toString()).css('width', $rimArray[i].w[j]);
+					$('#region' + i.toString() + j.toString()).css('height', $rimArray[i].h[j]);
+					$('#region' + i.toString() + j.toString()).css('left', $rimArray[i].x[j]);
+					$('#region' + i.toString() + j.toString()).css('top', $rimArray[i].y[j]);
 					//give the region a background div
-					$regionBG = document.createElement("div");
-					$regionBG.id = "regionBG" + i.toString(); 
-					$regionBG.style.width = "100%"; 
-					$regionBG.style.height = "100%"; 
+					$regionBG = document.createElement('div');
+					$regionBG.id = 'regionBG' + i.toString(); 
+					$regionBG.style.width = '100%'; 
+					$regionBG.style.height = '100%'; 
 					$regionBG.style.backgroundColor = $rimArray[i].color;
-					//document.getElementById("region" + i.toString() + j.toString()).appendChild($regionBG);
-					$("#region" + i.toString() + j.toString()).css("background-color", $rimArray[i].color);
+					//document.getElementById('region' + i.toString() + j.toString()).appendChild($regionBG);
+					$('#region' + i.toString() + j.toString()).css('background-color', $rimArray[i].color);
 				}
 
 
 			// if the rim is set to center mode 
-			} else if ($rimArray[i].mode == "c" || $rimArray[i].mode == "cw"){
+			} else if ($rimArray[i].mode == 'c' || $rimArray[i].mode == 'cw'){
 				var $currentRimWidth;
 				var $currentRimHeight;
 
-				if ($rimArray[i].mode == "c"){
+				if ($rimArray[i].mode == 'c'){
 					$currentRimWidth = 32;
 					$currentRimHeight = 32;
 				}
 
-				if ($rimArray[i].mode == "cw"){
+				if ($rimArray[i].mode == 'cw'){
 					$currentRimWidth = $smallestRimWidth;
 					$currentRimHeight = $smallestRimHeight;
 				}
@@ -312,19 +312,19 @@ $(document).ready(function(){
 							break;
 					}
 					// apply the CSS change
-					$("#region" + i.toString() + j.toString()).css("width", $rimArray[i].w[j]);
-					$("#region" + i.toString() + j.toString()).css("height", $rimArray[i].h[j]);
-					$("#region" + i.toString() + j.toString()).css("left", $rimArray[i].x[j]);
-					$("#region" + i.toString() + j.toString()).css("top", $rimArray[i].y[j]);
+					$('#region' + i.toString() + j.toString()).css('width', $rimArray[i].w[j]);
+					$('#region' + i.toString() + j.toString()).css('height', $rimArray[i].h[j]);
+					$('#region' + i.toString() + j.toString()).css('left', $rimArray[i].x[j]);
+					$('#region' + i.toString() + j.toString()).css('top', $rimArray[i].y[j]);
 					//give the region a background div
-					$regionBG = document.createElement("div");
-					$regionBG.id = "regionBG" + i.toString(); 
-					$regionBG.style.width = "100%"; 
-					$regionBG.style.height = "100%"; 
-					//$regionBG.style.display = "none"; 
+					$regionBG = document.createElement('div');
+					$regionBG.id = 'regionBG' + i.toString(); 
+					$regionBG.style.width = '100%'; 
+					$regionBG.style.height = '100%'; 
+					//$regionBG.style.display = 'none'; 
 					$regionBG.style.backgroundColor = $rimArray[i].color;
-					//document.getElementById("region" + i.toString() + j.toString()).appendChild($regionBG);
-					$("#region" + i.toString() + j.toString()).css("background-color", $rimArray[i].color);
+					//document.getElementById('region' + i.toString() + j.toString()).appendChild($regionBG);
+					$('#region' + i.toString() + j.toString()).css('background-color', $rimArray[i].color);
 				}
 			}
 
@@ -361,7 +361,7 @@ $(document).ready(function(){
 	// an array of the nodes
 	var $nodeArray = [];
 	// make the root node
-	$nodeArray.push(Node(0, -1, 8, "Fruit"));
+	$nodeArray.push(Node(0, -1, 8, 'Fruit'));
 	// give it an array of its children's IDs
 	$nodeArray[0].children = new Array();
 
@@ -378,27 +378,27 @@ $(document).ready(function(){
 		$numberOfNodes++;
 	}
 	// 	sub-opinions	
-	addNode(0, 3, "Fruit is good for you");
-	addNode(1, 3, "Fruit is bad for you");
+	addNode(0, 3, 'Fruit is good for you');
+	addNode(1, 3, 'Fruit is bad for you');
 	// 	sub-actions	
-	addNode(0, 5, "Eat");
-	addNode(0, 5, "Give");
-	addNode(0, 5, "Plant");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Preserve");
-	addNode(0, 5, "Squash");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Ferment");
-	addNode(0, 5, "Cook");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Example");
-	addNode(0, 5, "Refine");
+	addNode(0, 5, 'Eat');
+	addNode(0, 5, 'Give');
+	addNode(0, 5, 'Plant');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Preserve');
+	addNode(0, 5, 'Squash');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Ferment');
+	addNode(0, 5, 'Cook');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Example');
+	addNode(0, 5, 'Refine');
 	//	sub-topics
-	addNode(0, 8, "Food");
+	addNode(0, 8, 'Food');
 	
 	
 	var $innerRim = $numberOfRims - 1;
@@ -412,14 +412,14 @@ $(document).ready(function(){
 	var $nodeBarArray = [];
 	
 	// the central node bar is bigger
-	$centralNodeBar = document.createElement("div");
-	$centralNodeBar.id = "centralNodeBar";
+	$centralNodeBar = document.createElement('div');
+	$centralNodeBar.id = 'centralNodeBar';
 	// append the central node bar div to the center region
-	document.getElementById( "region" + $innerRim.toString() + "4" ).appendChild($centralNodeBar);
+	document.getElementById( 'region' + $innerRim.toString() + '4' ).appendChild($centralNodeBar);
 
 	function makeNodeBars(){
 		// remove all the current nodebars
-		$("div.nodeBar").remove();
+		$('div.nodeBar').remove();
 		// for every child of the root node, make another one
 		
 		if (!($nodeArray[$focusedNode].children === undefined )){
@@ -428,42 +428,42 @@ $(document).ready(function(){
 				var $nodeBarRegion = $nodeArray[$nodeArray[$focusedNode].children[i]].shape;
 
 				// make the new node bar
-				$nodeBarArray[i] = document.createElement("div");
+				$nodeBarArray[i] = document.createElement('div');
 				// put the node bars in the appropriate regions, 1 rim outwards and the region the node is tagged with
-				document.getElementById( "region" + "2" + $nodeBarRegion.toString()).appendChild($nodeBarArray[i]);
+				document.getElementById( 'region' + '2' + $nodeBarRegion.toString()).appendChild($nodeBarArray[i]);
 				// give the node a CSS id and class
-				$nodeBarArray[i].id = "nodeBar" + i.toString();
-				$nodeBarArray[i].className = "nodeBar";
+				$nodeBarArray[i].id = 'nodeBar' + i.toString();
+				$nodeBarArray[i].className = 'nodeBar';
 				// put the content in the node bars
-				document.getElementById("nodeBar" + i.toString()).innerHTML = $nodeArray[$nodeArray[$focusedNode].children[i]].text;
+				document.getElementById('nodeBar' + i.toString()).innerHTML = $nodeArray[$nodeArray[$focusedNode].children[i]].text;
 				// if the nodebar is clicked
-				$("#nodeBar" + i.toString()).click(function() {
+				$('#nodeBar' + i.toString()).click(function() {
 					focusNode($nodeArray[$focusedNode].children[i]);
 					makeNodeBars();
 				});
 			}
 		}
 		// display the focused node's text in the center region (#4) on the innermost rim
-		document.getElementById( "centralNodeBar" ).innerHTML = "<br>" + $nodeArray[$focusedNode].text;
+		document.getElementById( 'centralNodeBar' ).innerHTML = '<br>' + $nodeArray[$focusedNode].text;
 	}
 	makeNodeBars();
 
-	var $textArea = document.createElement("textarea");
-	$textArea.id = "inputText";
-	$textArea.placeholder = "Click here to type a response...";
-	$textArea.style.width = "100%";
-	$textArea.style.height = "100%";
+	var $textArea = document.createElement('textarea');
+	$textArea.id = 'inputText';
+	$textArea.placeholder = 'Click here to type a response...';
+	$textArea.style.width = '100%';
+	$textArea.style.height = '100%';
 	function moveTextArea(rim, region){
 		if (rim == 2){
-			document.getElementById("region" + rim.toString() + region.toString()).appendChild($textArea);
+			document.getElementById('region' + rim.toString() + region.toString()).appendChild($textArea);
 		}
 	}
 
 	// listen for hovering on the innermost rim
-	$("#region" + "20" ).bind("mouseenter", function() {
+	$('#region' + '20' ).bind('mouseenter', function() {
 		moveTextArea(2,0);
 	});
-	$("#region" + "21" ).bind("mouseenter", function() {
+	$('#region' + '21' ).bind('mouseenter', function() {
 		moveTextArea(2,1);
 	});
 
@@ -472,7 +472,7 @@ $(document).ready(function(){
 	
 	var debug = {
 		print : function() {
-			document.getElementById("debug").innerHTML = $debugval1;	
+			document.getElementById('debug').innerHTML = $debugval1;	
 
 			}
 	};
