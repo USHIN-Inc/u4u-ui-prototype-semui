@@ -10,6 +10,8 @@ $(document).ready(function(){
 	var $boxHeight;
 
 	//		--- GLOBAL VARIABLES ---
+    var $regionBG;
+    var $centralNodeBar;
 
 	// number of rims to start with
 	var $numberOfRims = 3;
@@ -70,7 +72,7 @@ $(document).ready(function(){
 
 	// make the rims initial rims
 	// for each rim
-	for(i = 0; i < $numberOfRims; i++){
+	for(var i = 0; i < $numberOfRims; i++){
 		$rimArray[i].width = 0;
 		$rimArray[i].height = 0;
 		$rimArray[i].hOffset;
@@ -86,7 +88,7 @@ $(document).ready(function(){
 		// alternate checkering regions
 		var $checkeredRegion = true;
 		// for each region in the rim
-		for(j = 0; j < 9; j++){
+		for(var j = 0; j < 9; j++){
 			// create the HTML elements with the name "region(rimNum)(regionNum)
 			// region numbers are 0-8
 			// 0 = nw, 1 = n, 2 = ne, 3 = w, 4 = c, 5 = e, 6 = sw, 7 = s, 8 = se
