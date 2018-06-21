@@ -22,7 +22,7 @@ $(document).ready(function(){
     var $centralNodeBar;
 
 	// number of rims to start with
-	var $numberOfRims = 3;
+	// var $numberOfRims = 3;
 	// margin on each side of the box
 	var $horizontalMargin = 32;
 	var $verticalMargin = 64;
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 	// make the rims initial rims
 	// for each rim
-	for(var i = 0; i < $numberOfRims; i++){
+	for(var i = 0; i < $rimArray.length; i++){
 		$rimArray[i].width = 0;
 		$rimArray[i].height = 0;
 		$rimArray[i].hOffset;
@@ -150,7 +150,7 @@ $(document).ready(function(){
 		*/
 
 		// do this for each rim
-		for(i = 0; i < $numberOfRims; i++){
+		for(i = 0; i < $rimArray.length; i++){
 			// if it's not the outer rim
 			if (i > 0) {
 				// set the width and height to the center region (#4) width and height of the rim outside it (embed it inside)
@@ -409,7 +409,7 @@ $(document).ready(function(){
 	addNode(0, 8, 'Food');
 	
 	
-	var $innerRim = $numberOfRims - 1;
+	var $innerRim = $rimArray.length - 1;
 
 
 	// node bars are the divs that make up the body of the node, what's clickable 
