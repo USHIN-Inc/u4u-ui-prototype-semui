@@ -1,6 +1,14 @@
 // on document load
 $(document).ready(function(){
 
+	// Call the jQuery Semantic UI plugin like this:
+	//	$('#box').semUI({
+	//		numberOfRims: 3,
+	//		horizontalMargin: 32,
+	//		verticalMargin: 64,
+	//		nodes: [{ id: 1, name: 'blah' }, {}]
+	//	});
+
 	// set outer frame dimensions to the window dimensions minus 32 on each side
 	//var $boxWidth = $(window).width() - 64;
 	//var $boxHeight = $(window).height() - 128;
