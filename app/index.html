@@ -3,23 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>U4Ud</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>semui</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-
     <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
     <!-- endbuild -->
-
-    <!-- build:css styles/main.orig.css -->
+    <!-- build:css styles/semui.css -->
+    <link rel="stylesheet" href="styles/semui.css">
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- build:js scripts/modernizr.js -->
+    <script src="scripts/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
@@ -30,19 +29,24 @@
     <div id="box"></div>
     <div id="debug"></div>
 
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
     <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/simple-uuid/uuid.js"></script>
-    <!-- endbower -->
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- endbuild -->
-
-    <!-- build:js scripts/jquery.semUI.js -->
-    <script src="scripts/jquery.semUI.js"></script>
+    <!-- build:js scripts/semui.js -->
+    <script src="scripts/semui.js"></script>
     <!-- endbuild -->
-
-    <!-- build:js scripts/main.orig.js -->
+    <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-</body>
+  </body>
 </html>
