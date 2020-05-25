@@ -1,92 +1,85 @@
-$icon-font-path: '../fonts/';
-// bower:scss
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// endbower
-
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+body{
+	background-color:#111;
+	color:white;
+	overflow:hidden;
+	font-family:Arial, Helvetica, sans-serif;
+}
+textArea{
+	resize: none;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.4);
+	text-align:center;
+}
+textArea:focus{
+	background-color: rgba(255, 255, 255, 1);
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+#box{
+	width:1024px;
+	height:600px;
+	top: 32px;
+	color:black;
 }
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
+.region{
+	background-color:pink;
+	position:fixed;
+  	display:flex;
+  	flex-direction: column;
+  	justify-content: space-between;
+	overflow-y:auto;
 }
-
-/* Custom page header */
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+#nw{
+	left: 32px;
 }
-
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
+#ne{
+	right: 32px;
 }
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+#w{
+	left: 32px;
 }
-
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+#e{
+	right: 32px;
 }
-.container-narrow > hr {
-  margin: 30px 0;
+#sw{
+	left: 32px;
 }
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+#se{
+	right: 32px;
 }
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
+#debug{
+	background-color:white;
+	position:fixed;
+	width:400px;
+	height:400px;
+	top:-380px;
+	right:-380px;
+	color:black;
 }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+#debug:hover{
+	top:0px;
+	right:0px;
 }
-.marketing p + h4 {
-  margin-top: 28px;
+#centralNodeBar{
+	background-color: rgba(255,255,255,0.0);
+	height:100%;
+	font-size:36px;
+	font-weight:bold;
+  	display:flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	justify-content: top;
 }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.nodeBar{
+	background-color: rgba(255,255,255,0.2);
+	font-size:16px;
+	text-align:center;
+	margin-top: 1px;
+	cursor: pointer;
+}
+.nodeBar:hover{
+	background-color: rgba(255,255,255,0.5);
+}
+.nodeBarCheckered{
+	background-color: rgba(255,255,255,0.4);
+	
 }
